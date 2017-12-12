@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" manifest="app.manifest">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="apple-mobile-web-app-title" content="Safari">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="light">
+  <title>Safari</title>
+
+  <link rel="apple-touch-icon" href="./images/app-icon.png">
+  <link rel="apple-touch-startup-image" href="./launch.png">
+
+  <style>
+    body {
+      background: rgba(249, 249, 249, 1.00);
+    }
+
+    .app-container {
+      position: absolute;
+      top: 3px;
+      margin-top: 100px;
+    }
+
+    body, .app-container {
+      padding: 0;
+      margin: 0;
+    }
+
+    .screen img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="screen" data-current-screen-index="0">
+      <img src="./images/safari.png" />
+    </div>
+  </div>
+  <script>
+    var screen = document.querySelector('.screen')
+    var image = screen.querySelector('img')
+
+    screen.addEventListener('touchend', onTouchUp)
+
+    var screens = [
+      'home.png',
+      'order.png',
+      'orderdetail.png'	
+    ]
+    
+    function onTouchUp() {
+      if(screen) {
+        var idx = screen.getAttribute('data-current-screen-index')
+        if(++idx < screens.length) {
+          image.src = './images/' + screens[idx]
+        } else {
+          // open fake business message app
+          //window.location.replace('customerx-abc://')
+			//window.location.replace('customerx-abc-marriott://')
+        }
+
+        screen.setAttribute('data-current-screen-index', idx)
+      }
+    }
+
+  </script>
+</body>
+</html>
