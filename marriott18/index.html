@@ -36,7 +36,7 @@
 <body>
   <div class="app-container">
     <div class="screen" data-current-screen-index="0">
-      <img src="./images/screen1.png" />
+      <img src="./images/safari.png" />
     </div>
   </div>
   <script>
@@ -47,8 +47,23 @@
 
     var screens = [
       'screen1.png',
-      'screen2.png',		
+      'screen2.png'
     ]
+    
+    function onTouchUp() {
+      if(screen) {
+        var idx = screen.getAttribute('data-current-screen-index')
+        if(++idx < screens.length) {
+          image.src = './images/' + screens[idx]
+        } else {
+          // open fake business message app
+          //window.location.replace('customerx-abc://')
+			//window.location.replace('customerx-abc-marriott://')
+        }
+
+        screen.setAttribute('data-current-screen-index', idx)
+      }
+    }
 
   </script>
 </body>
