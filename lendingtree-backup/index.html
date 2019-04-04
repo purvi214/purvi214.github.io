@@ -136,15 +136,15 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://cs-demo-video-1x.my.salesforce.com',
-			'https://sdodemo-main-166ce2cf6b6-1683429751b.force.com/professional',
+			'https://lt-backup-3p.lightning.force.com',
+			'https://sdodemo-main-166ce2cf6b6-169-169ac35ea9a.force.com/professional',
 			gslbBaseURL,
-			'00D1U000000t7o9',
+			'00D1U000001BFwu',
 			'LendingTree',
 			{
 				baseLiveAgentContentURL: 'https://c.la2-c1-ph2.salesforceliveagent.com/content',
-				deploymentId: '5721U00000095Fy',
-				buttonId: '5731U00000095TT',
+				deploymentId: '5721U000000dYjQ',
+				buttonId: '5731U000000dbZN',
 				baseLiveAgentURL: 'https://d.la2-c1-ph2.salesforceliveagent.com/chat',
 				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1U00000003DYUAY_1690835345a',
 				isOfflineSupportEnabled: false
@@ -154,7 +154,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://cs-demo-video-1x.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://lt-backup-3p.lightning.force.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
